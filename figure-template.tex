@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{amssymb,amsmath}
+\usepackage{euler}
+\usepackage{gensymb}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont{EB Garamond}
+\setsansfont{D-DINCondensed}
+\setmonofont{Fira Code}
+\newcommand{\tl}[2]{\textsc{\addfontfeature{LetterSpace=#1} #2}}
+
+\usepackage{pgf}
+\standaloneenv{pgfpicture}
+\begin{document}
+\input{FIGURE}
+\end{document}

@@ -1,0 +1,17 @@
+.PHONY: default figures clean
+
+PGF = $(wildcard pgf/*.pgf)
+FIGURES = $(addprefix fig-,$(notdir $(PGF:.pgf=.pdf)))
+
+default: figures
+	
+
+figures: $(FIGURES)
+	
+
+fig-%.pdf: pgf/%.pgf
+	cp figure-template.tex /tmp/fig.tex
+	sed -i "s|FIGURE|$(notdir $<)|g" /tmp/fig.tex
+	cp pgf/*.png /tmp
+	cd pgf && xelatex /tmp/fig.tex && mv fig.pdf ../$@ && rm -f fig.aux fig.log
+	@echo "Successfully created $@"
