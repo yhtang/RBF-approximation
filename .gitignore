@@ -144,3 +144,10 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# figures
+pgf/
+svg/
+
+# virtualenv
+venv-*
